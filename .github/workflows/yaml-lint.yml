@@ -1,0 +1,14 @@
+---
+name: Change proposal testing
+'on':
+  push:
+    branches:
+      - '*'
+
+jobs:
+
+  test-YAML:
+    name: Check YAML streams
+    uses: evoila/GitHub-Actions/.github/workflows/test-YAML.yaml@reusable_workflow/test-YAML
+    with:
+      python-version-file: .python-version
