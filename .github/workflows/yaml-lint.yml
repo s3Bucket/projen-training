@@ -9,6 +9,6 @@ jobs:
 
   test-YAML:
     name: Check YAML streams
-    uses: evoila/GitHub-Actions/.github/workflows/reusable-YAML.yaml@main/reuseable-YAML
+    uses: evoila/GitHub-Actions/.github/workflows/reusable-YAML.yaml@main
     with:
       python-version-file: .python-version
