@@ -1,15 +1,15 @@
 import pytest
+from aws_cdk import App
+from aws_cdk.assertions import Template
 
-from projen_training.example import hello
+from projen_training.main import MyStack
 
-@pytest.mark.parametrize(
-    ("name", "expected"),
-    [
-        ("A. Musing", "Hello A. Musing!"),
-        ("traveler", "Hello traveler!"),
-        ("projen developer", "Hello projen developer!"),
-    ],
-)
-def test_hello(name, expected):
-    """Example test with parametrization."""
-    assert hello(name) == expected
+@pytest.fixture(scope='module')
+def template():
+  app = App()
+  stack = MyStack(app, "my-stack-test")
+  template = Template.from_stack(stack)
+  yield template
+
+def test_no_buckets_found(template):
+  template.resource_count_is("AWS::S3::Bucket", 0)
