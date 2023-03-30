@@ -83,6 +83,3 @@ dmypy.json
 .pyre/
 .pytype/
 cython_debug/
-!/cdk.json
-/cdk.out/
-.cdk.staging/
