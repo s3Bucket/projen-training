@@ -69,35 +69,6 @@
         }
       ]
     },
-    "deploy": {
-      "name": "deploy",
-      "description": "Deploys your CDK app to the AWS cloud",
-      "steps": [
-        {
-          "exec": "cdk deploy",
-          "receiveArgs": true
-        }
-      ]
-    },
-    "destroy": {
-      "name": "destroy",
-      "description": "Destroys your cdk app in the AWS cloud",
-      "steps": [
-        {
-          "exec": "cdk destroy",
-          "receiveArgs": true
-        }
-      ]
-    },
-    "diff": {
-      "name": "diff",
-      "description": "Diffs the currently deployed app against your code",
-      "steps": [
-        {
-          "exec": "cdk diff"
-        }
-      ]
-    },
     "eject": {
       "name": "eject",
       "description": "Remove projen from the project",
@@ -134,7 +105,7 @@
       "description": "Runs after successful compilation",
       "steps": [
         {
-          "spawn": "synth:silent"
+          "spawn": "synth"
         }
       ]
     },
@@ -144,42 +115,16 @@
     },
     "synth": {
       "name": "synth",
-      "description": "Synthesizes your cdk app into cdk.out",
+      "description": "Synthesizes your cdk8s app into dist",
       "steps": [
         {
-          "exec": "cdk synth"
-        }
-      ]
-    },
-    "synth:silent": {
-      "name": "synth:silent",
-      "description": "Synthesizes your cdk app into cdk.out and suppresses the template in stdout (part of \"yarn build\")",
-      "steps": [
-        {
-          "exec": "cdk synth -q"
+          "exec": "cdk8s synth"
         }
       ]
     },
     "test": {
       "name": "test",
-      "description": "Run tests",
-      "steps": [
-        {
-          "exec": "pytest"
-        }
-      ]
-    },
-    "watch": {
-      "name": "watch",
-      "description": "Watches changes in your source code and rebuilds and deploys to the current account",
-      "steps": [
-        {
-          "exec": "cdk deploy --hotswap"
-        },
-        {
-          "exec": "cdk watch"
-        }
-      ]
+      "description": "Run tests"
     }
   },
   "env": {

@@ -7,6 +7,6 @@
 /.projen/deps.json linguist-generated
 /.projen/files.json linguist-generated
 /.projen/tasks.json linguist-generated
-/cdk.json linguist-generated
+/cdk8s.yaml linguist-generated
 /requirements-dev.txt linguist-generated
 /requirements.txt linguist-generated
