@@ -6,7 +6,7 @@
     ".projen/deps.json",
     ".projen/files.json",
     ".projen/tasks.json",
-    "cdk8s.yaml",
+    "cdk.json",
     "requirements-dev.txt",
     "requirements.txt"
   ],
