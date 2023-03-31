@@ -7,7 +7,8 @@ project = AwsCdkPythonApp(
     module_name="projen_training",
     name="projen-training",
     version="0.1.0",
-    deps=["pytest"]
+    deps=["pytest"],
+    poetry=True,
 )
 
 project.synth()
