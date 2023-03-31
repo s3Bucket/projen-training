@@ -1,0 +1,19 @@
+---
+
+name: Change proposal testing
+
+
+# Without quotes, this key could be parsed as the boolean true value instead of the string "on"
+'on':
+  push:
+    branches:
+      - '*'
+
+
+jobs:
+
+  test-YAML:
+    name: Check YAML streams
+    uses: evoila/GitHub-Actions/.github/workflows/test-YAML.yaml@reusable_workflow/test-YAML
+    with:
+      python-version-file: .python-version

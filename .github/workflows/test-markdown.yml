@@ -1,0 +1,19 @@
+---
+
+name: Change proposal testing
+
+
+# Without quotes, this key could be parsed as the boolean true value instead of the string "on"
+'on':
+  push:
+    branches:
+      - '*'
+
+
+jobs:
+
+  test-Markdown:
+    name: Check Markdown documents
+    uses: evoila/GitHub-Actions/.github/workflows/test-Markdown.yaml@reusable_workflow/test-Markdown
+    with:
+      node-version-file: .nvmrc
