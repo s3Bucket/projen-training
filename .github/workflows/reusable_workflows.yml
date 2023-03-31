@@ -9,6 +9,12 @@ name: Change proposal testing
 
 jobs:
 
+  test-Markdown:
+    name: Check Markdown documents
+    uses: evoila/GitHub-Actions/.github/workflows/reusable-Markdown.yaml@v0.6.0
+    with:
+      node-version-file: .nvmrc
+
   test-YAML:
     name: Check YAML streams
     uses: evoila/GitHub-Actions/.github/workflows/reusable-YAML.yaml@v0.6.0
