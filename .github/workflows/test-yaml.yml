@@ -1,7 +1,7 @@
 ---
 name: Change proposal testing
 
-# Without quotes, this key could be parsed as the boolean true value instead of the string "on"
+# Without quotes, key could be parsed as boolean True instead of string "on"
 'on':
   push:
     branches:
