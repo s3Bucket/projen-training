@@ -16,7 +16,10 @@ def test_one_vpc_found(template):
   template.has_resource_properties(
         "AWS::EC2::VPC",
         {
-            "CidrBlock": "10.0.0.0/16",
-            "Tags" : [ {"Key": "Name", "Value": "network-stack-test/TheVPC"}, {"Key": "Owner", "Value":"bu-aws"} ]
+            "CidrBlock": "192.168.0.0/16",
+            "Tags" : [ {"Key": "Name", "Value": "network-stack-test/CdkClusterVPC"}, {"Key": "Owner", "Value":"bu-aws"} ]
         },
     )
+  
+def test_two_private_subnets_found(template):
+  template.resource_count_is("AWS::EC2::Subnet", 2)
