@@ -110,6 +110,17 @@
         }
       ]
     },
+    "hello": {
+      "name": "hello",
+      "steps": [
+        {
+          "exec": "echo \"---\" | cat - .github/workflows/reusable-workflows.yml > temp && mv -f temp .github/workflows/reusable-workflows.yml "
+        },
+        {
+          "exec": "sed -i \"\" -e \"s/^on:$/'on':/g\" .github/workflows/reusable-workflows.yml"
+        }
+      ]
+    },
     "install": {
       "name": "install",
       "description": "Install and upgrade dependencies",

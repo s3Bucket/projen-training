@@ -21,14 +21,14 @@ tests-no-zope = ["cloudpickle", "cloudpickle", "hypothesis", "hypothesis", "mypy
 
 [[package]]
 name = "aws-cdk-asset-awscli-v1"
-version = "2.2.127"
+version = "2.2.128"
 description = "A library that contains the AWS CLI for use in Lambda Layers"
 category = "main"
 optional = false
 python-versions = "~=3.7"
 files = [
-    {file = "aws-cdk.asset-awscli-v1-2.2.127.tar.gz", hash = "sha256:57898d3a4e90f2667bda238bbde20defe11a989d4a939c0f1e8d5379ee6432ec"},
-    {file = "aws_cdk.asset_awscli_v1-2.2.127-py3-none-any.whl", hash = "sha256:85a0729d61b0734fd9626564ef87fb56e18249a3f8de0e4ca648d5629397f3d4"},
+    {file = "aws-cdk.asset-awscli-v1-2.2.128.tar.gz", hash = "sha256:5161fa0ead6aaf48864ed6a25b933349d780740fefea014c9deb278d92713dcb"},
+    {file = "aws_cdk.asset_awscli_v1-2.2.128-py3-none-any.whl", hash = "sha256:78cceec422942a53e95ee7ebdadea129b9403905aab88fcb80a58b365f8cbc8a"},
 ]
 
 [package.dependencies]
@@ -110,18 +110,18 @@ typing_extensions = {version = "*", markers = "python_version < \"3.8\""}
 
 [[package]]
 name = "constructs"
-version = "10.1.300"
+version = "10.1.302"
 description = "A programming model for software-defined state"
 category = "main"
 optional = false
 python-versions = "~=3.7"
 files = [
-    {file = "constructs-10.1.300-py3-none-any.whl", hash = "sha256:9688ac04201688ae1d9ddb6f7d2d3aa9d0a9dc2e1dc5a22aed10663a739283c1"},
-    {file = "constructs-10.1.300.tar.gz", hash = "sha256:25fa5b871dc972d2fb2b5da1f49f1216c51da6caaf2621370fcb30755245c40a"},
+    {file = "constructs-10.1.302-py3-none-any.whl", hash = "sha256:e99390593511ceec1964beeab0977c6df4ca4dbdf0bf17dc3391471fb202e9fb"},
+    {file = "constructs-10.1.302.tar.gz", hash = "sha256:94e8f2dc238e30129013a808f23a109a4c5749b94616a8c51c2597ce49bd623c"},
 ]
 
 [package.dependencies]
-jsii = ">=1.79.0,<2.0.0"
+jsii = ">=1.80.0,<2.0.0"
 publication = ">=0.0.3"
 typeguard = ">=2.13.3,<2.14.0"
 
@@ -161,14 +161,14 @@ testing = ["flake8 (<5)", "pytest (>=6)", "pytest-black (>=0.3.7)", "pytest-chec
 
 [[package]]
 name = "jsii"
-version = "1.79.0"
+version = "1.80.0"
 description = "Python client for jsii runtime"
 category = "main"
 optional = false
 python-versions = "~=3.7"
 files = [
-    {file = "jsii-1.79.0-py3-none-any.whl", hash = "sha256:325dd57a57f57cd150bc92699b91d5414c2e042e1f81c12c97b9de53088e4ed3"},
-    {file = "jsii-1.79.0.tar.gz", hash = "sha256:0a771bfb6f5775cfc0ba7b77c021d3bdf52f71fb52b75ad8ef7c038a23e49e74"},
+    {file = "jsii-1.80.0-py3-none-any.whl", hash = "sha256:ea3cace063f6a47cdf0a74c929618d779efab426fedb7692a8ac1b9b29797f8c"},
+    {file = "jsii-1.80.0.tar.gz", hash = "sha256:4da63ab99f2696cd063574460c94221f0a7de9d345e71dfb19dfbcecf8ca8355"},
 ]
 
 [package.dependencies]

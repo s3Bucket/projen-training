@@ -2,7 +2,7 @@
   "files": [
     ".gitattributes",
     ".github/workflows/pull-request-lint.yml",
-    ".github/workflows/reusable-worflows.yml",
+    ".github/workflows/reusable-workflows.yml",
     ".gitignore",
     ".projen/deps.json",
     ".projen/files.json",

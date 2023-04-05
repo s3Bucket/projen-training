@@ -1,5 +1,4 @@
 from projen.awscdk import AwsCdkPythonApp
-import projen.github as github
 import projen.github.workflows as workflows
 
 project = AwsCdkPythonApp(
@@ -11,20 +10,13 @@ project = AwsCdkPythonApp(
     version="0.1.0",
     deps=["pytest"],
     poetry=True,
+    
 )
 
-workflow = project.github.add_workflow(name="reusable-worflows")
-workflow.on(push={"branches":["*"]})
+workflow = project.github.add_workflow(name="reusable-workflows")
+workflow.on(push={"branches":['*']})
 workflow.add_jobs(
     {
-        "test-YAML": {
-            "name": "Check YAML streams",
-            "uses": "evoila/GitHub-Actions/.github/workflows/reusable-YAML.yaml@v0.6.0",
-            "permissions": workflows.JobPermissions(),
-            "with": {
-                "python-version-file": ".python-version"
-            }
-        },
         "test-Markdown": {
             "name": "Check Markdown documents",
             "uses": "evoila/GitHub-Actions/.github/workflows/reusable-Markdown.yaml@v0.6.0",
@@ -32,9 +24,20 @@ workflow.add_jobs(
             "with": {
                 "node-version-file": ".nvmrc"
             }
+        },
+        "test-YAML": {
+            "name": "Check YAML streams",
+            "uses": "evoila/GitHub-Actions/.github/workflows/reusable-YAML.yaml@v0.6.0",
+            "permissions": workflows.JobPermissions(),
+            "with": {
+                "python-version-file": ".python-version"
+            }
         }
     }
 )
 
+hello = project.add_task('hello');
+hello.exec('echo "---" | cat - .github/workflows/reusable-workflows.yml > temp && mv -f temp .github/workflows/reusable-workflows.yml ')
+hello.exec('sed -i "" -e "s/^on:$/\'on\':/g" .github/workflows/reusable-workflows.yml');
 
 project.synth()
