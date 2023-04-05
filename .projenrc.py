@@ -1,5 +1,6 @@
 from projen.awscdk import AwsCdkPythonApp
 import projen.github.workflows as workflows
+import os
 
 project = AwsCdkPythonApp(
     author_email="cschmidt@evoila.de",
@@ -37,9 +38,9 @@ workflow.add_jobs(
 )
 
 hello = project.add_task('hello');
-hello.exec('echo "---" | cat - .github/workflows/reusable-workflows.yml > temp && mv -f temp .github/workflows/reusable-workflows.yml ')
-hello.exec('sed -i "" -e "s/^on:$/\'on\':/g" .github/workflows/reusable-workflows.yml');
-hello.exec('echo "---" | cat - .github/workflows/pull-request-lint.yml > temp && mv -f temp .github/workflows/pull-request-lint.yml ')
-hello.exec('sed -i "" -e "s/^on:$/\'on\':/g" .github/workflows/pull-request-lint.yml');
+
+for filename in os.listdir(".github/workflows/"):
+    hello.exec(f'echo "---" | cat - .github/workflows/{filename} > temp && mv -f temp .github/workflows/{filename} ')
+    hello.exec(f'sed -i "" -e "s/^on:$/\'on\':/g" .github/workflows/{filename}');
 
 project.synth()
