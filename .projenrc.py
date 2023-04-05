@@ -20,7 +20,7 @@ workflow.add_jobs(
         "test-Markdown": {
             "name": "Check Markdown documents",
             "uses": "evoila/GitHub-Actions/.github/workflows/reusable-Markdown.yaml@v0.6.0",
-            "permissions": workflows.JobPermissions(),
+            "permissions": workflows.JobPermissions(contents=workflows.JobPermission.READ),
             "with": {
                 "node-version-file": ".nvmrc"
             }
