@@ -28,7 +28,7 @@ workflow.add_jobs(
         "test-YAML": {
             "name": "Check YAML streams",
             "uses": "evoila/GitHub-Actions/.github/workflows/reusable-YAML.yaml@v0.6.0",
-            "permissions": workflows.JobPermissions(),
+            "permissions": workflows.JobPermissions(contents=workflows.JobPermission.READ),
             "with": {
                 "python-version-file": ".python-version"
             }
