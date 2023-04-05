@@ -39,5 +39,7 @@ workflow.add_jobs(
 hello = project.add_task('hello');
 hello.exec('echo "---" | cat - .github/workflows/reusable-workflows.yml > temp && mv -f temp .github/workflows/reusable-workflows.yml ')
 hello.exec('sed -i "" -e "s/^on:$/\'on\':/g" .github/workflows/reusable-workflows.yml');
+hello.exec('echo "---" | cat - .github/workflows/pull-request-lint.yml > temp && mv -f temp .github/workflows/pull-request-lint.yml ')
+hello.exec('sed -i "" -e "s/^on:$/\'on\':/g" .github/workflows/pull-request-lint.yml');
 
 project.synth()

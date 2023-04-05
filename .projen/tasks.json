@@ -118,6 +118,12 @@
         },
         {
           "exec": "sed -i \"\" -e \"s/^on:$/'on':/g\" .github/workflows/reusable-workflows.yml"
+        },
+        {
+          "exec": "echo \"---\" | cat - .github/workflows/pull-request-lint.yml > temp && mv -f temp .github/workflows/pull-request-lint.yml "
+        },
+        {
+          "exec": "sed -i \"\" -e \"s/^on:$/'on':/g\" .github/workflows/pull-request-lint.yml"
         }
       ]
     },
