@@ -37,10 +37,4 @@ workflow.add_jobs(
     }
 )
 
-hello = project.add_task('hello');
-
-for filename in os.listdir(".github/workflows/"):
-    hello.exec(f'echo "---" | cat - .github/workflows/{filename} > temp && mv -f temp .github/workflows/{filename} ')
-    hello.exec(f'sed -i "" -e "s/^on:$/\'on\':/g" .github/workflows/{filename}');
-
 project.synth()
