@@ -11,7 +11,6 @@ project = AwsCdkPythonApp(
     version="0.1.0",
     deps=["pytest"],
     poetry=True,
-    
 )
 
 workflow = project.github.add_workflow(name="reusable-workflows")
